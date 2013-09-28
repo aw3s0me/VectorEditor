@@ -1,0 +1,226 @@
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.exe
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.pdb
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.baml
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\App.g.cs
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+c:\users\max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+E:\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.exe
+E:\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.pdb
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.baml
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\App.g.cs
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\WpfApplication2\WpfApplication2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\About.baml
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\help.baml
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\About.g.cs
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\obj\x86\Debug\help.g.cs
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+E:\Новая папка\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.exe
+E:\Новая папка\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.pdb
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\About.baml
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\help.baml
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.baml
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\About.g.cs
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\help.g.cs
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\App.g.cs
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Новая папка\WpfApplication2\WpfApplication2\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+E:\ТХИ\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.exe
+E:\ТХИ\WpfApplication2\WpfApplication2\bin\Debug\WpfApplication2.pdb
+E:\ТХИ\WpfApplication2\WpfApplication2\bin\Debug\PhoenixControlLib.dll
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\About.baml
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\help.baml
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.baml
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\About.g.cs
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\help.g.cs
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\App.g.cs
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\ТХИ\WpfApplication2\WpfApplication2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Max\documents\visual studio 2010\Projects\WpfApplication2\WpfApplication2\bin\Debug\PhoenixControlLib.dll
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+D:\Downloads\WpfApplication2\bin\Debug\WpfApplication2.exe
+D:\Downloads\WpfApplication2\bin\Debug\WpfApplication2.pdb
+D:\Downloads\WpfApplication2\bin\Debug\Xceed.Wpf.DataGrid.dll
+D:\Downloads\WpfApplication2\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
+D:\Downloads\WpfApplication2\obj\x86\Debug\About.baml
+D:\Downloads\WpfApplication2\obj\x86\Debug\help.baml
+D:\Downloads\WpfApplication2\obj\x86\Debug\MainWindow.baml
+D:\Downloads\WpfApplication2\obj\x86\Debug\About.g.cs
+D:\Downloads\WpfApplication2\obj\x86\Debug\help.g.cs
+D:\Downloads\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+D:\Downloads\WpfApplication2\obj\x86\Debug\App.g.cs
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+E:\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+E:\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+E:\WpfApplication2\bin\Debug\WpfApplication2.exe
+E:\WpfApplication2\bin\Debug\WpfApplication2.pdb
+E:\WpfApplication2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\WpfApplication2\obj\x86\Debug\About.baml
+E:\WpfApplication2\obj\x86\Debug\help.baml
+E:\WpfApplication2\obj\x86\Debug\MainWindow.baml
+E:\WpfApplication2\obj\x86\Debug\About.g.cs
+E:\WpfApplication2\obj\x86\Debug\help.g.cs
+E:\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+E:\WpfApplication2\obj\x86\Debug\App.g.cs
+E:\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+E:\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+E:\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+E:\WpfApplication2\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\WpfApplication2\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\WpfApplication2\obj\x86\Debug\visual_test.baml
+E:\WpfApplication2\obj\x86\Debug\visual_test.g.cs
+E:\WpfApplication2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+D:\Downloads\WpfApplication2\obj\x86\Debug\drawCanvas.g.cs
+D:\Downloads\WpfApplication2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Downloads\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+D:\Downloads\WpfApplication2\obj\x86\Debug\drawCanvas.baml
+E:\ТХИ\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+E:\ТХИ\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+E:\ТХИ\WpfApplication2\bin\Debug\WpfApplication2.exe
+E:\ТХИ\WpfApplication2\bin\Debug\WpfApplication2.pdb
+E:\ТХИ\WpfApplication2\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\ТХИ\WpfApplication2\obj\x86\Debug\About.baml
+E:\ТХИ\WpfApplication2\obj\x86\Debug\help.baml
+E:\ТХИ\WpfApplication2\obj\x86\Debug\MainWindow.baml
+E:\ТХИ\WpfApplication2\obj\x86\Debug\About.g.cs
+E:\ТХИ\WpfApplication2\obj\x86\Debug\drawCanvas.g.cs
+E:\ТХИ\WpfApplication2\obj\x86\Debug\help.g.cs
+E:\ТХИ\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+E:\ТХИ\WpfApplication2\obj\x86\Debug\App.g.cs
+E:\ТХИ\WpfApplication2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\ТХИ\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+E:\ТХИ\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+E:\ТХИ\WpfApplication2\obj\x86\Debug\drawCanvas.baml
+E:\ТХИ\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+E:\ТХИ\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+E:\ТХИ\WpfApplication2\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\ТХИ\WpfApplication2\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\ТХИ\WpfApplication2\obj\x86\Debug\test.baml
+E:\ТХИ\WpfApplication2\obj\x86\Debug\test.g.cs
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+C:\Users\Max\Desktop\студи\WpfApplication2\bin\Debug\WpfApplication2.exe
+C:\Users\Max\Desktop\студи\WpfApplication2\bin\Debug\WpfApplication2.pdb
+C:\Users\Max\Desktop\студи\WpfApplication2\bin\Debug\Xceed.Wpf.DataGrid.dll
+C:\Users\Max\Desktop\студи\WpfApplication2\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\About.baml
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\help.baml
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\MainWindow.baml
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\About.g.cs
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\help.g.cs
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\App.g.cs
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+C:\Users\Max\Desktop\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+D:\Downloads\ТХИ\студи\WpfApplication2\bin\Debug\WpfApplication2.exe
+D:\Downloads\ТХИ\студи\WpfApplication2\bin\Debug\WpfApplication2.pdb
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\About.baml
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\help.baml
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\About.g.cs
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\help.g.cs
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\App.g.cs
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\MainWindow.baml
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+D:\Downloads\ТХИ\студи\WpfApplication2\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2.exe
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2.pdb
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\bin\Debug\WpfApplication2.exe
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\bin\Debug\WpfApplication2.pdb
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\About.baml
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\help.baml
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\About.g.cs
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\help.g.cs
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\MainWindow.g.cs
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\App.g.cs
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\MainWindow.baml
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2.g.resources
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+D:\Учёба\4 семестр\Технологии программирования\ИДЗ\WpfApplication2\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2.exe
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2.pdb
+C:\Work\VectorEditor\bin\Debug\WpfApplication2.exe
+C:\Work\VectorEditor\bin\Debug\WpfApplication2.pdb
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2.csprojResolveAssemblyReference.cache
+C:\Work\VectorEditor\obj\x86\Debug\About.baml
+C:\Work\VectorEditor\obj\x86\Debug\help.baml
+C:\Work\VectorEditor\obj\x86\Debug\About.g.cs
+C:\Work\VectorEditor\obj\x86\Debug\help.g.cs
+C:\Work\VectorEditor\obj\x86\Debug\MainWindow.g.cs
+C:\Work\VectorEditor\obj\x86\Debug\App.g.cs
+C:\Work\VectorEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+C:\Work\VectorEditor\obj\x86\Debug\MainWindow.baml
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2.g.resources
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+C:\Work\VectorEditor\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\WpfApplication2.exe
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\WpfApplication2.pdb
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\bin\Debug\WpfApplication2.exe
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\bin\Debug\WpfApplication2.pdb
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\About.baml
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\help.baml
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\About.g.cs
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\help.g.cs
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\MainWindow.g.cs
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\App.g.cs
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\WpfApplication2_MarkupCompile.cache
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\WpfApplication2_MarkupCompile.lref
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\MainWindow.baml
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\WpfApplication2.g.resources
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\student_402\Desktop\VectorEditor\VectorEditor\obj\x86\Debug\GenerateResource.write.1.tlog

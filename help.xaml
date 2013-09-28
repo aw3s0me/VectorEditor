@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApplication2.help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Помощь" Height="250" Width="400"
+		MinHeight="160"
+		MinWidth="400"
+		MaxHeight="250"
+		MaxWidth="400"
+		ResizeMode="NoResize">
+	<StackPanel>
+		<Label>
+			<Label.Content>
+				<TextBlock TextWrapping="Wrap">
+					Для создания нового объекта выберите соответствующий элемент
+					на панели инструментов и левой кнопкой мыши щёлкните на 
+					рабочее поле.
+					<LineBreak/>
+					Для заливки объекта выберите цвет, которым хотите залить,
+					и элемент "Заливка", и щёлкните левой кнопкой мыши во внутрь
+					соответствующего объекта.
+					<LineBreak />
+					Для удаления объекта выберите элемент "Ластик" и щёлкните 
+					левой кнопкой мыши по объекту.
+					<LineBreak />
+					Для перемещения объекта выберите элемент "Рука" и, нажав
+					левой кнопкой мыши на соответствующий объект, переместите его
+					на новое место.
+					<LineBreak />
+					В случае возникновения проблем, обращайтесь к разработчику.
+				</TextBlock>
+			</Label.Content>
+		</Label>
+	</StackPanel>
+</Window>
