@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Media;
-using Xceed.Wpf.Toolkit;
+﻿using System.Windows.Media;
 
-namespace WpfApplication2
+namespace WpfApplication2.Elements
 {
-    public class circle: point
+    public class OxCircle : OxPoint
     {
         private int _radius;
         public int radius
@@ -33,7 +28,7 @@ namespace WpfApplication2
                 _color = value;
             }
         }
-        public circle(int x1,int y1,int rad):base(x1,y1)
+        public OxCircle(int x1,int y1,int rad):base(x1,y1)
         {
             _radius = rad;
         }

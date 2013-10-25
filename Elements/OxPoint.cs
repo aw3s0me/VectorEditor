@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Controls;
 using System.Windows.Shapes;
-using System.Windows.Input;
 
-namespace WpfApplication2
+namespace WpfApplication2.Elements
 {
-    public class point
+    public class OxPoint
     {
         protected int _x;
         protected int _y;
-        public int x
+        public int X
         {
             get
             {
@@ -24,7 +19,7 @@ namespace WpfApplication2
                 _x = value;
             }
         }
-        public int y
+        public int Y
         {
             get
             {
@@ -35,8 +30,8 @@ namespace WpfApplication2
                 _y = value;
             }
         }
-        public point() { }
-        public point(int x1, int y1)
+        public OxPoint() { }
+        public OxPoint(int x1, int y1)
         {
             _x = x1;
             _y = y1;
@@ -45,17 +40,17 @@ namespace WpfApplication2
         {
             
         }
-        public void print(Canvas pole)
+        public void Print(Canvas pole)
         {
-            Ellipse ellipse = new Ellipse();
+            var ellipse = new Ellipse();
             ellipse.Width = 4;
             ellipse.Height = 4;
             ellipse.StrokeThickness = 2;
             //x = Convert.ToInt32(Mouse.GetPosition(pole).X);
             //y = Convert.ToInt32(Mouse.GetPosition(pole).Y);
             ellipse.Fill = new SolidColorBrush(Colors.Black);
-            Canvas.SetLeft(ellipse, x);
-            Canvas.SetTop(ellipse, y);
+            Canvas.SetLeft(ellipse, X);
+            Canvas.SetTop(ellipse, Y);
             pole.Children.Add(ellipse);
            
         }

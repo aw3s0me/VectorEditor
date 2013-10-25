@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WpfApplication2
+﻿namespace WpfApplication2.Elements
 {
-    public class line:point
+    public class OxLine:OxPoint
     {
         protected int _x2;
         protected int _y2;
@@ -32,8 +27,8 @@ namespace WpfApplication2
                 _y2 = value;
             }
         }
-        public line() { }
-        public line(int x1, int y1, int x2, int y2)
+        public OxLine() { }
+        public OxLine(int x1, int y1, int x2, int y2)
             : base(x1, y1)
         {
             _x2 = x2;

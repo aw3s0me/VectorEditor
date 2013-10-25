@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WpfApplication2.About" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>About.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.App" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.help" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>help.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.MainWindow" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUQggAgAAACABAgBkABMCgIBBAkAhAghgEjwAUBASyI=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Elements.OxCircle" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAACAAIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Elements\OxCircle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Elements.OxFigure" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAIAAAAQAAAACAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Elements\OxFigure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Elements.OxLine" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Elements\OxLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Elements.OxPoint" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAYAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEYAA=</HashCode>
+      <FileName>Elements\OxPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Elements.OxRectangle" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Elements\OxRectangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Elements.OxTriangle" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Elements\OxTriangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Layers.CanvasLayer" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIAABAgAQAAAAAAAAAAIAAAAAAQAAAAAAAABQAEAA=</HashCode>
+      <FileName>Layers\CanvasLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Layers.ServiceLayer" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAABAAAAoAAQAAAAAAAAAA=</HashCode>
+      <FileName>Layers\ServiceLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Properties.Resources" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApplication2.Properties.Settings" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="WpfApplication2.Layers.Tools" Collapsed="true">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAgAABAAAAAAAACAAgCAAAAAAgAAABAAA=</HashCode>
+      <FileName>Layers\ServiceLayer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WpfApplication2.Layers.Size" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Layers\ServiceLayer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

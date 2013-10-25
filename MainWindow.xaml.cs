@@ -11,10 +11,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApplication2.Elements;
+using WpfApplication2.Layers;
 using Xceed.Wpf.Toolkit;
 using PhoenixControlLib;
 using Microsoft.Win32;
 using System.IO;
+using Size = WpfApplication2.Layers.Size;
 
 namespace WpfApplication2
 {
@@ -38,7 +41,7 @@ namespace WpfApplication2
         private bool colorChange = false;
         // for filling and cooking
         private bool isFil = false;
-        private Color lastColor = system.getInstance.currentColor;
+        private Color lastColor = ServiceLayer.GetInstance.CurrentColor;
         // for line
         private bool isPoint = false;
         private Point p2;
@@ -48,7 +51,7 @@ namespace WpfApplication2
         private string fileName;
         // i like to move it move it!
         private bool isDragging = false;
-        private Figure selectedVisual;
+        private OxFigure selectedVisual;
         private Vector clickoffset;
         // for drawing
         private Brush drawingBrush;
@@ -63,15 +66,15 @@ namespace WpfApplication2
         {
             if (selectedVisual != null)
                 ClearSelection();
-            if (system.getInstance.currentTool != tools.line)
+            if (ServiceLayer.GetInstance.CurrentTool != Tools.Line)
                 isPoint = false;
-            if (system.getInstance.currentTool != tools.fill)
+            if (ServiceLayer.GetInstance.CurrentTool != Tools.Fill)
                 isFil = false;
         }
         private void ClearSelection()
         {
             Point topLeftCorner = new Point(1, 1);
-            if (selectedVisual.name != Figure.shape.line)
+            if (selectedVisual.Name != OxFigure.Shape.Line)
             {
                 topLeftCorner = new Point(selectedVisual.ContentBounds.TopLeft.X + drawingPen.Thickness / 2,
                                                 selectedVisual.ContentBounds.TopLeft.Y + drawingPen.Thickness / 2);
@@ -83,68 +86,68 @@ namespace WpfApplication2
             selectedVisual = null;
         }
 
-        private void DrawFigure(Figure visual, Point topLeftCorner, bool isSelected)
+        private void DrawFigure(OxFigure visual, Point topLeftCorner, bool isSelected)
         {
-            Size curSize = new Size(1,1);
+            System.Windows.Size curSize = new System.Windows.Size(1,1);
             if (colorChange && clicked)
                 colorChange = false;
-            drawingBrush = (Brush)brushConverter.ConvertFromString(visual.color.ToString());
+            drawingBrush = (Brush)brushConverter.ConvertFromString(visual.Color.ToString());
             if (isFil)
-                drawingBrush = (Brush)brushConverter.ConvertFromString(system.getInstance.currentColor.ToString());
+                drawingBrush = (Brush)brushConverter.ConvertFromString(ServiceLayer.GetInstance.CurrentColor.ToString());
             using (DrawingContext dc = visual.RenderOpen())
             {
                 if (isSelected) drawingBrush = selectedDrawingBrush;
-                switch (visual.name)
+                switch (visual.Name)
                 {
-                    case Figure.shape.point:
+                    case OxFigure.Shape.Point:
                         drawingBrush = (Brush)brushConverter.ConvertFromString(Colors.Black.ToString());
-                        dc.DrawRoundedRectangle(drawingBrush, drawingPen, new Rect(topLeftCorner, new Size(7, 7)), 5, 5);
+                        dc.DrawRoundedRectangle(drawingBrush, drawingPen, new Rect(topLeftCorner, new System.Windows.Size(7, 7)), 5, 5);
                         break;
 
-                    case Figure.shape.square:
+                    case OxFigure.Shape.Square:
                         if (clicked)
                             curSize = visual.size;
                         else 
-                        if (system.getInstance.currentSize == size.Small)
-                            curSize = new Size(40, 40);
-                        else if (system.getInstance.currentSize == size.Medium)
-                            curSize = new Size(70, 70);
-                        else curSize = new Size(110, 110);
+                        if (ServiceLayer.GetInstance.CurrentSize == Size.Small)
+                            curSize = new System.Windows.Size(40, 40);
+                        else if (ServiceLayer.GetInstance.CurrentSize == Size.Medium)
+                            curSize = new System.Windows.Size(70, 70);
+                        else curSize = new System.Windows.Size(110, 110);
                         dc.DrawRectangle(drawingBrush, drawingPen, new Rect(topLeftCorner, curSize));
                         break;
 
-                    case Figure.shape.ellispe:
+                    case OxFigure.Shape.Ellispe:
                         if (clicked)
                             curSize = visual.size;
                         else
-                        if (system.getInstance.currentSize == size.Small)
-                            curSize = new Size(40, 40);
-                        else if (system.getInstance.currentSize == size.Medium)
-                            curSize = new Size(70, 70);
-                        else curSize = new Size(110, 110);
+                        if (ServiceLayer.GetInstance.CurrentSize == Size.Small)
+                            curSize = new System.Windows.Size(40, 40);
+                        else if (ServiceLayer.GetInstance.CurrentSize == Size.Medium)
+                            curSize = new System.Windows.Size(70, 70);
+                        else curSize = new System.Windows.Size(110, 110);
                         dc.DrawRoundedRectangle(drawingBrush, drawingPen, new Rect(topLeftCorner, curSize), 80, 80);
                         break;
 
-                    case Figure.shape.rectangle:
+                    case OxFigure.Shape.Rectangle:
                         if (clicked)
                             curSize = visual.size;
                         else
-                        if (system.getInstance.currentSize == size.Small)
-                            curSize = new Size(40, 23);
-                        else if (system.getInstance.currentSize == size.Medium)
-                            curSize = new Size(80, 45);
-                        else curSize = new Size(120, 70);
+                        if (ServiceLayer.GetInstance.CurrentSize == Size.Small)
+                            curSize = new System.Windows.Size(40, 23);
+                        else if (ServiceLayer.GetInstance.CurrentSize == Size.Medium)
+                            curSize = new System.Windows.Size(80, 45);
+                        else curSize = new System.Windows.Size(120, 70);
                         dc.DrawRectangle(drawingBrush, drawingPen, new Rect(topLeftCorner, curSize));
                         break;
 
-                    case Figure.shape.line:
+                    case OxFigure.Shape.Line:
                         if (!clicked)
                         {
-                            visual.v1 = p1 - topLeftCorner;
-                            visual.v2 = p2 - topLeftCorner;
+                            visual.Vect1 = p1 - topLeftCorner;
+                            visual.Vect2 = p2 - topLeftCorner;
                         }
-                        p1 = new Point(visual.v1.X + topLeftCorner.X, visual.v1.Y + topLeftCorner.Y);
-                        p2 = new Point(visual.v2.X + topLeftCorner.X, visual.v2.Y + topLeftCorner.Y);
+                        p1 = new Point(visual.Vect1.X + topLeftCorner.X, visual.Vect1.Y + topLeftCorner.Y);
+                        p2 = new Point(visual.Vect2.X + topLeftCorner.X, visual.Vect2.Y + topLeftCorner.Y);
                      //   drawingPen = new Pen(Brushes.Black, 2)
                         dc.DrawLine(drawingPen, p1, p2);
                         break;         
@@ -159,31 +162,31 @@ namespace WpfApplication2
             isChanged = true;
             bool isLin = false; // for line
             Point pointClicked = e.GetPosition(drawingSurface);
-            Figure visual = new Figure();
-            if (system.getInstance.currentTool != tools.erase && system.getInstance.currentTool != tools.hand && system.getInstance.currentTool != tools.fill)
+            var visual = new OxFigure();
+            if (ServiceLayer.GetInstance.CurrentTool != Tools.Erase && ServiceLayer.GetInstance.CurrentTool != Tools.Hand && ServiceLayer.GetInstance.CurrentTool != Tools.Fill)
             {
                 #region point
-                if (system.getInstance.currentTool == tools.point)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Point)
                 {
-                    visual.name = Figure.shape.point;
+                    visual.Name = OxFigure.Shape.Point;
                 }
                 #endregion
                 #region sqare
-                if (system.getInstance.currentTool == tools.square) //
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Square) //
                 {
-                    visual.name = Figure.shape.square;
+                    visual.Name = OxFigure.Shape.Square;
                 }
                 #endregion
                 #region ellipse
-                if (system.getInstance.currentTool == tools.ellipse)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Ellipse)
                 {
-                    visual.name = Figure.shape.ellispe;
+                    visual.Name = OxFigure.Shape.Ellispe;
                 }
                 #endregion
                 #region line
-                if (system.getInstance.currentTool == tools.line)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Line)
                 {
-                    visual.name = Figure.shape.line;
+                    visual.Name = OxFigure.Shape.Line;
                     if (isPoint)
                     {
                         p2 = pointClicked;
@@ -195,17 +198,17 @@ namespace WpfApplication2
                 }
                 #endregion
                 #region rect
-                if (system.getInstance.currentTool == tools.rectangle)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Rectangle)
                 {
-                    visual.name = Figure.shape.rectangle;
+                    visual.Name = OxFigure.Shape.Rectangle;
                 }
                 #endregion
-                if (system.getInstance.currentTool == tools.line && isLin)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Line && isLin)
                 {
                     DrawFigure(visual, pointClicked, false);
                     drawingSurface.AddVisual(visual);
                 }
-                else if (system.getInstance.currentTool != tools.line)
+                else if (ServiceLayer.GetInstance.CurrentTool != Tools.Line)
                 {
                     DrawFigure(visual, pointClicked, false);
                     drawingSurface.AddVisual(visual);
@@ -214,20 +217,20 @@ namespace WpfApplication2
             else
             {
                 #region erase
-                if (system.getInstance.currentTool == tools.erase)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Erase)
                 {
                     visual = drawingSurface.GetVisual(pointClicked);
                     if (visual != null) drawingSurface.DeleteVisual(visual);
                 }
                 #endregion
                 #region hand
-                if (system.getInstance.currentTool == tools.hand)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Hand)
                 {
                     Point topLeftCorner = new Point();
                     visual = drawingSurface.GetVisual(pointClicked);
                     if (visual != null)
                     {
-                        if (visual.name == Figure.shape.line)
+                        if (visual.Name == OxFigure.Shape.Line)
                         {
                             clicked = true;
                             DrawFigure(visual, topLeftCorner, true);
@@ -262,7 +265,7 @@ namespace WpfApplication2
                 }
                 #endregion
                 #region fill
-                if (system.getInstance.currentTool == tools.fill)
+                if (ServiceLayer.GetInstance.CurrentTool == Tools.Fill)
                 {
                     visual = drawingSurface.GetVisual(pointClicked);
                     if (visual != null)
@@ -270,14 +273,14 @@ namespace WpfApplication2
                         isFil = true;
                         Point topLeftCorner = new Point(visual.ContentBounds.TopLeft.X + drawingPen.Thickness / 2,
                                                    visual.ContentBounds.TopLeft.Y + drawingPen.Thickness / 2);
-                        visual.color = system.getInstance.currentColor;
+                        visual.Color = ServiceLayer.GetInstance.CurrentColor;
                         clicked = true;
                         DrawFigure(visual, topLeftCorner, false);
                         clicked = false;
                     }
                     else
                     {
-                        drawingBrush = (Brush)brushConverter.ConvertFromString(system.getInstance.currentColor.ToString());
+                        drawingBrush = (Brush)brushConverter.ConvertFromString(ServiceLayer.GetInstance.CurrentColor.ToString());
                         drawingSurface.Background = drawingBrush;
                     }
                 }
@@ -303,7 +306,7 @@ namespace WpfApplication2
             if (isDragging)
             {
                 Point pointDragged = new Point(1, 1);
-                if (selectedVisual.name == Figure.shape.line)
+                if (selectedVisual.Name == OxFigure.Shape.Line)
                 {
                     pointDragged = position;
                 }
@@ -333,51 +336,51 @@ namespace WpfApplication2
 
         private void hand_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.hand;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Hand;
             isPoint = false;
             isFil = false;
         }
         private void point_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.point;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Point;
             cheakClearSelection();
         }
         private void line_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.line;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Line;
             cheakClearSelection();
         }
         private void square_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.square;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Square;
             cheakClearSelection();
         }
         private void rect_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.rectangle;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Rectangle;
             cheakClearSelection();
         }
         private void ellipse_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.ellipse;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Ellipse;
             cheakClearSelection();
         }
         private void erase_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.erase;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Erase;
             cheakClearSelection();
         }
         private void fill_click(object sender, RoutedEventArgs e)
         {
-            system.getInstance.currentTool = tools.fill;
+            ServiceLayer.GetInstance.CurrentTool = Tools.Fill;
             cheakClearSelection();
         }
         private void colorPick_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
         {
-            system.getInstance.currentColor = colorPick.SelectedColor;
+            ServiceLayer.GetInstance.CurrentColor = colorPick.SelectedColor;
             colorChange = true;
             cheakClearSelection();
-            lastColor = system.getInstance.currentColor;
+            lastColor = ServiceLayer.GetInstance.CurrentColor;
         }
 
         #endregion 
@@ -398,9 +401,9 @@ namespace WpfApplication2
         private void clear_click(object sender, RoutedEventArgs e)
         {
             isSave = false;
-            drawingSurface.delAll();
-            system.getInstance.currentTool = tools.hand;
-            system.getInstance.currentColor = Colors.Black;
+            drawingSurface.DelAll();
+            ServiceLayer.GetInstance.CurrentTool = Tools.Hand;
+            ServiceLayer.GetInstance.CurrentColor = Colors.Black;
             colorPick.SelectedColor = Colors.Black;
             hand_btn.IsChecked = true;
         }
@@ -408,7 +411,7 @@ namespace WpfApplication2
         {
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.FileName = "";
-            openDialog.Filter = "All Files (*.*)|*.*|Image files|*.jpg; *.jpeg; *.bmp; *.gif;*.png";
+            openDialog.Filter = "All Files (*.*)|*.*|Image files|*.svg;";
             openDialog.Title = "Открыть файл";
             var dialogResult = openDialog.ShowDialog();
             if (dialogResult.HasValue && dialogResult.Value)
@@ -427,8 +430,8 @@ namespace WpfApplication2
              RenderTargetBitmap renderBitmap = new RenderTargetBitmap((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight,
                 96d, 96d, PixelFormats.Pbgra32);
             // needed otherwise the image output is black
-            drawingSurface.Measure(new Size((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight));
-            drawingSurface.Arrange(new Rect(new Size((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight)));
+            drawingSurface.Measure(new System.Windows.Size((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight));
+            drawingSurface.Arrange(new Rect(new System.Windows.Size((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight)));
             renderBitmap.Render(drawingSurface);
             //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
             PngBitmapEncoder encoder = new PngBitmapEncoder();
@@ -444,7 +447,7 @@ namespace WpfApplication2
         {
             isSave = true;
             SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Filter = "Image files|*.png";
+            saveDialog.Filter = "Image files|*.svg";
             var dialogResult = saveDialog.ShowDialog();
             if (dialogResult.HasValue && dialogResult.Value)
             {
@@ -460,21 +463,21 @@ namespace WpfApplication2
         private void setFigSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (setFigSize.SelectedIndex == (int)0)
-                system.getInstance.currentSize = size.Small;
+                ServiceLayer.GetInstance.CurrentSize = Size.Small;
             else if (setFigSize.SelectedIndex == 1)
-                system.getInstance.currentSize = size.Medium;
-            else system.getInstance.currentSize = size.Large;
+                ServiceLayer.GetInstance.CurrentSize = Size.Medium;
+            else ServiceLayer.GetInstance.CurrentSize = Size.Large;
         }
         private void undo_click(object sender, RoutedEventArgs e)
         {
             if (drawingSurface.ChildrenCount() > 0)
             {
-                drawingSurface.delLast();
+                drawingSurface.DelLast();
             }
         }
         private void redo_click(object sender, RoutedEventArgs e)
         {
-            drawingSurface.copyLast();
+            drawingSurface.CopyLast();
         }
 
         #endregion
@@ -501,82 +504,5 @@ namespace WpfApplication2
         }
     }
 
-    public class DrawingCanvas : Canvas
-    {
-        private List<Visual> visuals = new List<Visual>();
-        protected override int VisualChildrenCount
-        {
-            get
-            {
-                return visuals.Count;
-            }
-        }
-        public int ChildrenCount()
-        {
-                return visuals.Count;
-        }
-        protected override Visual GetVisualChild(int index)
-        {
-            return visuals[index];
-        }
-        public void AddVisual(Visual visual)
-        {
-            visuals.Add(visual);
-            base.AddVisualChild(visual);
-            base.AddLogicalChild(visual);
-        }
-        public void DeleteVisual(Visual visual)
-        {
-            visuals.Remove(visual);
-            base.RemoveLogicalChild(visual);
-            base.RemoveVisualChild(visual);
-        }
-        public Figure GetVisual(Point point)
-        {
-            HitTestResult hitResult = VisualTreeHelper.HitTest(this, point);
-            return hitResult.VisualHit as Figure;
-        }
-        public void delAll()
-        {
-            int t = VisualChildrenCount;
-            for (int i = t-1; i > -1; i--)
-            {
-                DeleteVisual(visuals[i]);
-            }
-            
-            BrushConverter brushConverter = new BrushConverter();
-            Brush drawingBrush = (Brush)brushConverter.ConvertFromString(Colors.White.ToString());
-            this.Background = drawingBrush;
-        }
-        public void delLast()
-        {
-            DeleteVisual(GetVisualChild(VisualChildrenCount - 1));
-        }
-        public void copyLast()
-        {
-            //AddVisual(GetVisualChild(VisualChildrenCount - 1));
-        }
-    }
 
-    public class Figure : DrawingVisual
-    {
-        public enum shape { point, ellispe, square, rectangle, line };
-        public shape name;
-        public Color color;
-        public Size size;
-        public Vector v1;
-        public Vector v2;
-
-        public Figure() : base()
-        {
-            color = system.getInstance.currentColor;
-            size = new Size(0, 0);
-        }
-        public Figure(shape name)
-            : base()
-        {
-            color = system.getInstance.currentColor;
-            this.name = name;
-        }
-    }
 }

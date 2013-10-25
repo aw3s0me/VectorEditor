@@ -65,7 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="rectangle.cs" />
+    <Compile Include="Elements\OxFigure.cs" />
+    <Compile Include="Layers\CanvasLayer.cs" />
+    <Compile Include="Elements\OxRectangle.cs" />
+    <Compile Include="Elements\OxTriangle.cs" />
     <Page Include="About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,19 +88,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="circle.cs" />
+    <Compile Include="Elements\OxCircle.cs" />
     <Compile Include="help.xaml.cs">
       <DependentUpon>help.xaml</DependentUpon>
     </Compile>
-    <Compile Include="line.cs" />
-    <Compile Include="system.cs" />
+    <Compile Include="Elements\OxLine.cs" />
+    <Compile Include="Layers\ServiceLayer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="point.cs" />
+    <Compile Include="Elements\OxPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
