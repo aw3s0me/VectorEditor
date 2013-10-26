@@ -1,13 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using WpfApplication2.Elements;
-using WpfApplication2.Layers;
-using Microsoft.Win32;
-using Size = WpfApplication2.Layers.Size;
+
 
 namespace WpfApplication2.Layers
 {
@@ -63,11 +59,9 @@ namespace WpfApplication2.Layers
             }
         }
 
-
-
         #endregion
 
-        public void cheakClearSelection()
+        public void CheakClearSelection()
         {
             if (SelectedVisual != null)
                 ClearSelection();
@@ -79,12 +73,11 @@ namespace WpfApplication2.Layers
 
         public void ClearSelection()
         {
-            Point topLeftCorner = new Point(1, 1);
             if (SelectedVisual.Name != OxFigure.Shape.Line)
             {
-                topLeftCorner = new Point(SelectedVisual.ContentBounds.TopLeft.X + DrawingPen.Thickness/2,
+                var topLeftCorner = new Point(SelectedVisual.ContentBounds.TopLeft.X + DrawingPen.Thickness/2,
                     SelectedVisual.ContentBounds.TopLeft.Y + DrawingPen.Thickness/2);
-                bool flag = IsClicked;
+                var flag = IsClicked;
                 IsClicked = true;
                 DrawFigure(SelectedVisual, topLeftCorner, false);
                 IsClicked = flag;
@@ -94,13 +87,17 @@ namespace WpfApplication2.Layers
 
         public void DrawFigure(OxFigure visual, Point topLeftCorner, bool isSelected)
         {
-            System.Windows.Size curSize = new System.Windows.Size(1, 1);
+            var curSize = new System.Windows.Size(1, 1);
+            Debug.WriteLine(topLeftCorner.ToString());
             if (ColorChange && IsClicked)
                 ColorChange = false;
+
             DrawingBrush = (Brush) BrushConverter.ConvertFromString(visual.Color.ToString());
+
             if (IsFill)
                 DrawingBrush = (Brush) BrushConverter.ConvertFromString(SelectionLayer.GetInstance.CurrentColor.ToString());
-            using (DrawingContext dc = visual.RenderOpen())
+
+            using (var dc = visual.RenderOpen())
             {
                 if (isSelected) DrawingBrush = SelectedDrawingBrush;
                 switch (visual.Name)
@@ -125,22 +122,42 @@ namespace WpfApplication2.Layers
                     case OxFigure.Shape.Ellispe:
                         if (IsClicked)
                             curSize = visual.size;
-                        else if (SelectionLayer.GetInstance.CurrentSize == Size.Small)
-                            curSize = new System.Windows.Size(40, 40);
-                        else if (SelectionLayer.GetInstance.CurrentSize == Size.Medium)
-                            curSize = new System.Windows.Size(70, 70);
-                        else curSize = new System.Windows.Size(110, 110);
+                        else switch (SelectionLayer.GetInstance.CurrentSize)
+                        {
+                            case Size.Small:
+                                curSize = new System.Windows.Size(40, 40);
+                                break;
+                            case Size.Medium:
+                                curSize = new System.Windows.Size(70, 70);
+                                break;
+                            case Size.Large:
+                                curSize = new System.Windows.Size(110, 110);
+                                break;
+                            default:
+                                curSize = new System.Windows.Size(110, 110);
+                                break;
+                        }
                         dc.DrawRoundedRectangle(DrawingBrush, DrawingPen, new Rect(topLeftCorner, curSize), 80, 80);
                         break;
 
                     case OxFigure.Shape.Rectangle:
                         if (IsClicked)
                             curSize = visual.size;
-                        else if (SelectionLayer.GetInstance.CurrentSize == Size.Small)
-                            curSize = new System.Windows.Size(40, 23);
-                        else if (SelectionLayer.GetInstance.CurrentSize == Size.Medium)
-                            curSize = new System.Windows.Size(80, 45);
-                        else curSize = new System.Windows.Size(120, 70);
+                        else switch (SelectionLayer.GetInstance.CurrentSize)
+                        {
+                            case Size.Small:
+                                curSize = new System.Windows.Size(40, 23);
+                                break;
+                            case Size.Medium:
+                                curSize = new System.Windows.Size(80, 45);
+                                break;
+                            case Size.Large:
+                                curSize = new System.Windows.Size(120, 70);
+                                break;
+                            default:
+                                curSize = new System.Windows.Size(80, 45);
+                                break;
+                        }
                         dc.DrawRectangle(DrawingBrush, DrawingPen, new Rect(topLeftCorner, curSize));
                         break;
 
@@ -160,7 +177,5 @@ namespace WpfApplication2.Layers
             }
 
         }
-
-       
     }
 }

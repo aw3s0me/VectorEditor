@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace WpfApplication2.Elements
 {
-    public class OxPoint
+    public class OxPoint : OxFigure
     {
         [XmlElement("X1")]
         protected int _x;
@@ -43,7 +43,7 @@ namespace WpfApplication2.Elements
         {
             
         }
-        public void Print(Canvas pole)
+   /*     public void Print(Canvas pole)
         {
             var ellipse = new Ellipse
             {
@@ -58,6 +58,6 @@ namespace WpfApplication2.Elements
             Canvas.SetTop(ellipse, Y);
             pole.Children.Add(ellipse);
            
-        }
+        } */
     }
 }

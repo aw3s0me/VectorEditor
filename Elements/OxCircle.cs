@@ -10,7 +10,7 @@ namespace WpfApplication2.Elements
         [XmlElement("Radius")]
         private int _radius;
         
-        public int radius
+        public int Radius
         {
             get
             {

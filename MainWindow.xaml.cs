@@ -233,43 +233,43 @@ namespace WpfApplication2
         private void point_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Point;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void line_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Line;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void square_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Square;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void rect_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Rectangle;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void ellipse_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Ellipse;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void erase_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Erase;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void fill_click(object sender, RoutedEventArgs e)
         {
             SelectionLayer.GetInstance.CurrentTool = Tools.Fill;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
         }
         private void colorPick_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
         {
             SelectionLayer.GetInstance.CurrentColor = colorPick.SelectedColor;
             DrawingLayer.GetInstance.ColorChange = true;
-            DrawingLayer.GetInstance.cheakClearSelection();
+            DrawingLayer.GetInstance.CheakClearSelection();
             DrawingLayer.GetInstance.LastColor = SelectionLayer.GetInstance.CurrentColor;
         }
 

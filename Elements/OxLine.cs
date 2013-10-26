@@ -2,7 +2,7 @@
 
 namespace WpfApplication2.Elements
 {
-    public class OxLine:OxPoint
+    public class OxLine : OxPoint
     {
         [XmlElement("X2")]
         protected int _x2;
