@@ -9,7 +9,7 @@ namespace WpfApplication2.Elements
         [XmlElement("Y2")]
         protected int _y2;
 
-        public int x2
+        public int X2
         {
             get
             {
@@ -20,7 +20,7 @@ namespace WpfApplication2.Elements
                 _x2 = value;
             }
         }
-        public int y2
+        public int Y2
         {
             get
             {

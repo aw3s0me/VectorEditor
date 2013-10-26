@@ -27,7 +27,7 @@ namespace WpfApplication2
             DrawingLayer.GetInstance.IsChanged = true;
             bool isLin = false; // for line
             Point pointClicked = e.GetPosition(drawingSurface);
-            var visual = new OxFigure();
+            OxFigure visual = null;
             if (SelectionLayer.GetInstance.CurrentTool != Tools.Erase &&
                 SelectionLayer.GetInstance.CurrentTool != Tools.Hand && SelectionLayer.GetInstance.CurrentTool != Tools.Fill)
             {
@@ -35,7 +35,7 @@ namespace WpfApplication2
 
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Point)
                 {
-                    visual.Name = OxFigure.Shape.Point;
+                    visual = new OxPoint {Name = OxFigure.Shape.Point};
                 }
 
                 #endregion
@@ -44,7 +44,7 @@ namespace WpfApplication2
 
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Square) //
                 {
-                    visual.Name = OxFigure.Shape.Square;
+                    visual = new OxRectangle {Name = OxFigure.Shape.Square};
                 }
 
                 #endregion
@@ -53,7 +53,7 @@ namespace WpfApplication2
 
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Ellipse)
                 {
-                    visual.Name = OxFigure.Shape.Ellispe;
+                    visual = new OxCircle {Name = OxFigure.Shape.Ellispe};
                 }
 
                 #endregion
@@ -62,7 +62,7 @@ namespace WpfApplication2
 
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Line)
                 {
-                    visual.Name = OxFigure.Shape.Line;
+                    visual = new OxLine {Name = OxFigure.Shape.Line};
                     if (DrawingLayer.GetInstance.IsPoint)
                     {
                         DrawingLayer.GetInstance.Point2 = pointClicked;
@@ -79,19 +79,24 @@ namespace WpfApplication2
 
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Rectangle)
                 {
-                    visual.Name = OxFigure.Shape.Rectangle;
+                    visual = new OxRectangle {Name = OxFigure.Shape.Rectangle};
                 }
 
                 #endregion
 
+                if (visual == null)
+                {
+                    return;
+                }
+
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Line && isLin)
                 {
-                    DrawingLayer.GetInstance.DrawFigure(visual, pointClicked, false);
+                    DrawingLayer.GetInstance.DrawFigure(ref visual, pointClicked, false);
                     drawingSurface.AddVisual(visual);
                 }
                 else if (SelectionLayer.GetInstance.CurrentTool != Tools.Line)
                 {
-                    DrawingLayer.GetInstance.DrawFigure(visual, pointClicked, false);
+                    DrawingLayer.GetInstance.DrawFigure(ref visual, pointClicked, false);
                     drawingSurface.AddVisual(visual);
                 }
             }
@@ -118,7 +123,7 @@ namespace WpfApplication2
                         if (visual.Name == OxFigure.Shape.Line)
                         {
                             DrawingLayer.GetInstance.IsClicked = true;
-                            DrawingLayer.GetInstance.DrawFigure(visual, topLeftCorner, true);
+                            DrawingLayer.GetInstance.DrawFigure(ref visual, topLeftCorner, true);
                             DrawingLayer.GetInstance.ClickOffset = topLeftCorner - pointClicked;
                             DrawingLayer.GetInstance.IsDragging = true;
                             if (DrawingLayer.GetInstance.SelectedVisual != null && DrawingLayer.GetInstance.SelectedVisual != visual)
@@ -132,7 +137,7 @@ namespace WpfApplication2
                             DrawingLayer.GetInstance.IsClicked = true;
                             topLeftCorner.X = visual.ContentBounds.TopLeft.X + DrawingLayer.GetInstance.DrawingPen.Thickness / 2;
                             topLeftCorner.Y = visual.ContentBounds.TopLeft.Y + DrawingLayer.GetInstance.DrawingPen.Thickness / 2;
-                            DrawingLayer.GetInstance.DrawFigure(visual, topLeftCorner, true);
+                            DrawingLayer.GetInstance.DrawFigure(ref visual, topLeftCorner, true);
                             DrawingLayer.GetInstance.ClickOffset = topLeftCorner - pointClicked;
                             DrawingLayer.GetInstance.IsDragging = true;
                             if (DrawingLayer.GetInstance.SelectedVisual != null && DrawingLayer.GetInstance.SelectedVisual != visual)
@@ -144,7 +149,8 @@ namespace WpfApplication2
                     }
                     else if (DrawingLayer.GetInstance.IsSel)
                     {
-                        DrawingLayer.GetInstance.DrawFigure(DrawingLayer.GetInstance.SelectedVisual, DrawingLayer.GetInstance.LastPoint, false);
+                        OxFigure selectedVisual = DrawingLayer.GetInstance.SelectedVisual;
+                        DrawingLayer.GetInstance.DrawFigure(ref selectedVisual, DrawingLayer.GetInstance.LastPoint, false);
                         DrawingLayer.GetInstance.IsSel = false;
                     }
                 }
@@ -163,7 +169,7 @@ namespace WpfApplication2
                             visual.ContentBounds.TopLeft.Y + DrawingLayer.GetInstance.DrawingPen.Thickness / 2);
                         visual.Color = SelectionLayer.GetInstance.CurrentColor;
                         DrawingLayer.GetInstance.IsClicked = true;
-                        DrawingLayer.GetInstance.DrawFigure(visual, topLeftCorner, false);
+                        DrawingLayer.GetInstance.DrawFigure(ref visual, topLeftCorner, false);
                         DrawingLayer.GetInstance.IsClicked = false;
                     }
                     else
@@ -183,7 +189,8 @@ namespace WpfApplication2
 
             if (DrawingLayer.GetInstance.IsSel)
             {
-                DrawingLayer.GetInstance.DrawFigure(DrawingLayer.GetInstance.SelectedVisual, DrawingLayer.GetInstance.LastPoint, false);
+                OxFigure selectedVisual = DrawingLayer.GetInstance.SelectedVisual;
+                DrawingLayer.GetInstance.DrawFigure(ref selectedVisual, DrawingLayer.GetInstance.LastPoint, false);
                 DrawingLayer.GetInstance.IsSel = false;
             }
             DrawingLayer.GetInstance.IsClicked = false;
@@ -205,7 +212,8 @@ namespace WpfApplication2
                 {
                     pointDragged = position + DrawingLayer.GetInstance.ClickOffset;
                 }
-                DrawingLayer.GetInstance.DrawFigure(DrawingLayer.GetInstance.SelectedVisual, pointDragged, true);
+                OxFigure selectedVisual = DrawingLayer.GetInstance.SelectedVisual;
+                DrawingLayer.GetInstance.DrawFigure(ref selectedVisual, pointDragged, true);
                 DrawingLayer.GetInstance.LastPoint = pointDragged;
             }
 

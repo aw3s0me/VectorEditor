@@ -40,6 +40,11 @@ namespace WpfApplication2.Elements
             get { return color.ToString(); }
         }
 
+        public OxCircle()
+        {
+            
+        }
+
         public OxCircle(int x1,int y1,int rad):base(x1,y1)
         {
             _radius = rad;

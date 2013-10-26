@@ -42,14 +42,5 @@ namespace WpfApplication2.Elements
             _y3 = y3;
         }
 
-
-        public Color Color { get; set; }
-
-        [XmlElement("Color")]
-        public string XmlColor
-        {
-            get { return Color.ToString(); }
-        }
-
     }
 }

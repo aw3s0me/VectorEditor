@@ -13,6 +13,7 @@ namespace WpfApplication2.Layers
     {
         [XmlElement("Element")]
         private readonly List<Visual> _visuals = new List<Visual>();
+        //private readonly List< 
 
         public List<Visual> Visuals
         {

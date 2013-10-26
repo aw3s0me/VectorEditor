@@ -1,0 +1,10 @@
+<Canvas>
+  <Point X="216" Y="164">Point</Point>
+  <Point X="202" Y="174">Point</Point>
+  <Point X="230" Y="289">Point</Point>
+  <Point X="393" Y="260">Point</Point>
+  <Square SizeW="70" SizeH="70" X="368" Y="83" X2="438" Y2="153" Color="#FF000000">Square</Square>
+  <Square SizeW="70" SizeH="70" X="627" Y="254" X2="697" Y2="324" Color="#FF000000">Square</Square>
+  <Circle SizeW="70" SizeH="70" X="89" Y="264" Color="#00000000">Circle</Circle>
+  <Circle SizeW="70" SizeH="70" X="75" Y="70" Color="#00000000">Circle</Circle>
+</Canvas>

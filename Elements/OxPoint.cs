@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 
 namespace WpfApplication2.Elements
 {
+
     public class OxPoint : OxFigure
     {
         [XmlElement("X1")]
@@ -39,6 +40,13 @@ namespace WpfApplication2.Elements
             _x = x1;
             _y = y1;
         }
+
+        public OxPoint(OxFigure figure) : base()
+        {
+            
+        }
+
+
         public void isSelected()
         {
             
