@@ -153,9 +153,7 @@ namespace WpfApplication2.Layers
                                     var point = new Point(Int32.Parse(attributes["X"].Value), Int32.Parse(attributes["Y"].Value));
                                     DrawingLayer.GetInstance.DrawFigure(ref figure, point, true);
                                     canvas.AddVisual(figure);
-                                    //child.SetAttribute("X", value: elemAsPoint.X.ToString(CultureInfo.InvariantCulture));
-                                    //child.SetAttribute("Y", value: elemAsPoint.Y.ToString(CultureInfo.InvariantCulture));
-                                    //child.InnerText = "Point";
+
                                     break;
                                 }
                                 case "Square":

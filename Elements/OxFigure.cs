@@ -14,18 +14,16 @@ namespace WpfApplication2.Elements
     {
         public enum Shape { Point, Ellispe, Square, Rectangle, Line };
 
-        [XmlElement("Name")]
         public Shape Name;
-        [NonSerialized]
+
         public Color Color;
-        [XmlElement("Color")]
         public string XmlColor
         {
             get { return Color.ToString(); }
         }
-        [NonSerialized]
+ 
         public Size size;
-        [XmlElement("Size")]
+
         public string XMLSize
         {
             get
@@ -36,10 +34,7 @@ namespace WpfApplication2.Elements
 
         }
         
-
-        [NonSerialized]
         public Vector Vect1;
-        [NonSerialized]
         public Vector Vect2;
 
         public OxFigure()

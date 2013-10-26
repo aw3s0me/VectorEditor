@@ -8,10 +8,8 @@ using WpfApplication2.Elements;
 
 namespace WpfApplication2.Layers
 {
-    [XmlRoot("Canvas")]
     public class CanvasLayer : Canvas
     {
-        [XmlElement("Element")]
         private readonly List<Visual> _visuals = new List<Visual>();
         //private readonly List< 
 
