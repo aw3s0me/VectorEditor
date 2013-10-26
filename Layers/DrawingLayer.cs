@@ -86,6 +86,15 @@ namespace WpfApplication2.Layers
             SelectedVisual = null;
         }
 
+        public void DrawLine(ref OxFigure visual, Point point1, Point point2)
+        {
+            using (var dc = visual.RenderOpen())
+            {
+                dc.DrawLine(DrawingPen, point1, point2);
+            }
+
+        }
+
         public void DrawFigure(ref OxFigure visual, Point topLeftCorner, bool isSelected)
         {
             var curSize = new System.Windows.Size(1, 1);
@@ -117,11 +126,21 @@ namespace WpfApplication2.Layers
                     {
                         if (IsClicked)
                             curSize = visual.size;
-                        else if (SelectionLayer.GetInstance.CurrentSize == Size.Small)
-                            curSize = new System.Windows.Size(40, 40);
-                        else if (SelectionLayer.GetInstance.CurrentSize == Size.Medium)
-                            curSize = new System.Windows.Size(70, 70);
-                        else curSize = new System.Windows.Size(110, 110);
+                        else switch (SelectionLayer.GetInstance.CurrentSize)
+                        {
+                            case Size.Small:
+                                curSize = new System.Windows.Size(40, 40);
+                                break;
+                            case Size.Medium:
+                                curSize = new System.Windows.Size(70, 70);
+                                break;
+                            case Size.Large:
+                                curSize = new System.Windows.Size(110, 110);
+                                break;
+                            default:
+                                curSize = visual.size;
+                                break;
+                        }
                         dc.DrawRectangle(DrawingBrush, DrawingPen, new Rect(topLeftCorner, curSize));
                         var oxRect = visual as OxRectangle;
                         if (oxRect != null) oxRect.X = (int) topLeftCorner.X;
@@ -148,7 +167,7 @@ namespace WpfApplication2.Layers
                                     curSize = new System.Windows.Size(110, 110);
                                     break;
                                 default:
-                                    curSize = new System.Windows.Size(110, 110);
+                                    curSize = visual.size;
                                     break;
                             }
                         dc.DrawRoundedRectangle(DrawingBrush, DrawingPen, new Rect(topLeftCorner, curSize), 80, 80);
@@ -176,7 +195,7 @@ namespace WpfApplication2.Layers
                                     curSize = new System.Windows.Size(120, 70);
                                     break;
                                 default:
-                                    curSize = new System.Windows.Size(80, 45);
+                                    curSize = visual.size;
                                     break;
                             }
                         dc.DrawRectangle(DrawingBrush, DrawingPen, new Rect(topLeftCorner, curSize));

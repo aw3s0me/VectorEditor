@@ -126,16 +126,97 @@ namespace WpfApplication2.Layers
             
         }
 
-        public static CanvasLayer DeserializeFromXML(string filename)
+        public static void DeserializeFromXML(string filename, ref CanvasLayer canvas)
         {
-            CanvasLayer savedCanvas;
-            using (var fs = File.Open(filename, FileMode.Open, FileAccess.Read))
+
+            try
             {
-                savedCanvas = XamlReader.Load(fs) as CanvasLayer;
-                fs.Close();
+                var xmlDoc = new XmlDocument();
+                xmlDoc.Load(filename);
+                var root = xmlDoc.FirstChild;
+
+                if (xmlDoc.DocumentElement != null)
+                    //foreach (var node in xmlDoc.DocumentElement.ChildNodes)
+                    foreach (XmlNode node in root.ChildNodes)
+                    {
+                        if (node.Attributes != null)
+                        {
+                            XmlAttributeCollection attributes;
+                            switch (node.Name)
+                            {
+                                case "Point":
+                                {
+                                    Debug.WriteLine("1");
+                                    attributes = node.Attributes;
+                                    OxFigure figure = new OxPoint();
+                                    figure.Name = OxFigure.Shape.Point;
+                                    var point = new Point(Int32.Parse(attributes["X"].Value), Int32.Parse(attributes["Y"].Value));
+                                    DrawingLayer.GetInstance.DrawFigure(ref figure, point, true);
+                                    canvas.AddVisual(figure);
+                                    //child.SetAttribute("X", value: elemAsPoint.X.ToString(CultureInfo.InvariantCulture));
+                                    //child.SetAttribute("Y", value: elemAsPoint.Y.ToString(CultureInfo.InvariantCulture));
+                                    //child.InnerText = "Point";
+                                    break;
+                                }
+                                case "Square":
+                                {
+                                    attributes = node.Attributes;
+                                    OxFigure figure = new OxRectangle();
+                                    figure.Name = OxFigure.Shape.Square;
+                                    var point1 = new Point(Int32.Parse(attributes["X"].Value), Int32.Parse(attributes["Y"].Value));
+                                    figure.size = new System.Windows.Size(Double.Parse(attributes["SizeW"].Value), Double.Parse(attributes["SizeH"].Value));
+                                    figure.Color = Colors.Black;
+                                    DrawingLayer.GetInstance.DrawFigure(ref figure, point1, false);
+                                    canvas.AddVisual(figure);
+                                    break;
+                                }
+                                case "Circle":
+                                {
+                                    attributes = node.Attributes;
+                                    OxFigure figure = new OxCircle();
+                                    figure.Name = OxFigure.Shape.Rectangle;
+                                    var point1 = new Point(Int32.Parse(attributes["X"].Value), Int32.Parse(attributes["Y"].Value));
+                                    figure.size = new System.Windows.Size(Double.Parse(attributes["SizeW"].Value), Double.Parse(attributes["SizeH"].Value));
+                                    figure.Color = Colors.Black;
+                                    DrawingLayer.GetInstance.DrawFigure(ref figure, point1, false);
+                                    canvas.AddVisual(figure);
+                                    break;
+                                }
+                                case "Rectangle":
+                                {
+                                    attributes = node.Attributes;
+                                    OxFigure figure = new OxRectangle();
+                                    figure.Name = OxFigure.Shape.Rectangle;
+                                    var point1 = new Point(Int32.Parse(attributes["X"].Value), Int32.Parse(attributes["Y"].Value));
+                                    figure.size = new System.Windows.Size(Double.Parse(attributes["SizeW"].Value), Double.Parse(attributes["SizeH"].Value));
+                                    figure.Color = Colors.Black;
+                                    DrawingLayer.GetInstance.DrawFigure(ref figure, point1, false);
+                                    canvas.AddVisual(figure);
+                                    break;
+                                }
+                                case "Line":
+                                {
+                                    attributes = node.Attributes;
+                                    OxFigure figure = new OxLine();
+                                    figure.Name = OxFigure.Shape.Line;
+                                    var point1 = new Point(Int32.Parse(attributes["X"].Value), Int32.Parse(attributes["Y"].Value));
+                                    var point2 = new Point(Int32.Parse(attributes["X2"].Value), Int32.Parse(attributes["Y2"].Value));
+                                    DrawingLayer.GetInstance.DrawLine(ref figure, point1, point2);
+                                    figure.Color = Colors.Black;
+                                    DrawingLayer.GetInstance.DrawFigure(ref figure, point1, false);
+                                    canvas.AddVisual(figure);
+                                    break;
+                                }
+
+
+                            }
+                        }
+                    }
             }
-            return savedCanvas;
-            //WpfApplication2.MainWindow.La
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
 
 

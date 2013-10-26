@@ -314,9 +314,10 @@ namespace WpfApplication2
             var dialogResult = openDialog.ShowDialog();
             if (dialogResult.HasValue && dialogResult.Value)
             {
-                ImageBrush ibrush = new ImageBrush();
+                /*ImageBrush ibrush = new ImageBrush();
                 ibrush.ImageSource = new BitmapImage(new Uri(openDialog.FileName.ToString()));
-                drawingSurface.Background = ibrush;
+                drawingSurface.Background = ibrush; */
+                SerializationLayer.DeserializeFromXML(openDialog.FileName, ref this.drawingSurface);
             }       
         }
         private void save_click(object sender, RoutedEventArgs e)
