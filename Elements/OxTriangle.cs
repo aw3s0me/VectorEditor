@@ -1,10 +1,13 @@
 ﻿using System.Windows.Media;
+using System.Xml.Serialization;
 
 namespace WpfApplication2.Elements
 {
     class OxTriangle : OxLine
     {
+        [XmlElement("X3")]
         protected int _x3;
+        [XmlElement("Y2")]
         protected int _y3;
 
         public int X3
@@ -41,5 +44,12 @@ namespace WpfApplication2.Elements
 
 
         public Color Color { get; set; }
+
+        [XmlElement("Color")]
+        public string XmlColor
+        {
+            get { return Color.ToString(); }
+        }
+
     }
 }

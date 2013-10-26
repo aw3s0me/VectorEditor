@@ -131,6 +131,7 @@
 							 MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown"
 							 MouseLeftButtonUp="drawingSurface_MouseLeftButtonUp"
 							 MouseMove="mouse_move">
+            
 		</layers:CanvasLayer>
 	</DockPanel>
 </Window>

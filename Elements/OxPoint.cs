@@ -1,12 +1,15 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace WpfApplication2.Elements
 {
     public class OxPoint
     {
+        [XmlElement("X1")]
         protected int _x;
+        [XmlElement("Y1")]
         protected int _y;
         public int X
         {
@@ -42,13 +45,15 @@ namespace WpfApplication2.Elements
         }
         public void Print(Canvas pole)
         {
-            var ellipse = new Ellipse();
-            ellipse.Width = 4;
-            ellipse.Height = 4;
-            ellipse.StrokeThickness = 2;
+            var ellipse = new Ellipse
+            {
+                Width = 4,
+                Height = 4,
+                StrokeThickness = 2,
+                Fill = new SolidColorBrush(Colors.Black)
+            };
             //x = Convert.ToInt32(Mouse.GetPosition(pole).X);
             //y = Convert.ToInt32(Mouse.GetPosition(pole).Y);
-            ellipse.Fill = new SolidColorBrush(Colors.Black);
             Canvas.SetLeft(ellipse, X);
             Canvas.SetTop(ellipse, Y);
             pole.Children.Add(ellipse);

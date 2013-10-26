@@ -1,14 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Xml.Serialization;
 using WpfApplication2.Elements;
 
 namespace WpfApplication2.Layers
 {
+    [XmlRoot("Canvas")]
     public class CanvasLayer : Canvas
     {
+        [XmlElement("Element")]
         private readonly List<Visual> _visuals = new List<Visual>();
+
+        public List<Visual> Visuals
+        {
+            get
+            {
+                return _visuals;
+            }
+        } 
+
         protected override int VisualChildrenCount
         {
             get
@@ -44,8 +57,8 @@ namespace WpfApplication2.Layers
         }
         public void DelAll()
         {
-            int t = VisualChildrenCount;
-            for (int i = t - 1; i > -1; i--)
+            var size = VisualChildrenCount;
+            for (var i = size - 1; i > -1; i--)
             {
                 DeleteVisual(_visuals[i]);
             }

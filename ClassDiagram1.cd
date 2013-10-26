@@ -31,12 +31,12 @@
   <Class Name="WpfApplication2.Elements.OxCircle" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAACAAIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAAAAACAAIAAAAAAAAAAAAAAQAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Elements\OxCircle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WpfApplication2.Elements.OxFigure" Collapsed="true">
-    <Position X="4.5" Y="1.75" Width="1.5" />
+  <Class Name="WpfApplication2.Elements.OxFigure">
+    <Position X="4.75" Y="1.75" Width="1.5" />
     <NestedTypes>
       <Enum Name="WpfApplication2.Elements.OxFigure.Shape" Collapsed="true">
         <TypeIdentifier>
@@ -64,31 +64,31 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WpfApplication2.Elements.OxRectangle" Collapsed="true">
-    <Position X="1.25" Y="3" Width="1.5" />
+    <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Elements\OxRectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WpfApplication2.Elements.OxTriangle" Collapsed="true">
-    <Position X="3.25" Y="3" Width="1.5" />
+    <Position X="2.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAMAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Elements\OxTriangle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WpfApplication2.Layers.CanvasLayer" Collapsed="true">
+  <Class Name="WpfApplication2.Layers.CanvasLayer">
     <Position X="6.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAIAABAgAQAAAAAAAAAAIAAAAAAQAAAAAAAABQAEAA=</HashCode>
+      <HashCode>BAAIAABAgAQAAEAAAAAAAIAAAAAAQAAAAAAAABQAEAA=</HashCode>
       <FileName>Layers\CanvasLayer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WpfApplication2.Layers.ServiceLayer" Collapsed="true">
+  <Class Name="WpfApplication2.Layers.DrawingLayer" Collapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAABAAAAoAAQAAAAAAAAAA=</HashCode>
-      <FileName>Layers\ServiceLayer.cs</FileName>
+      <HashCode>AAAAAgAAAAAAAAEAAAAAAAAABAAAAoAAQEAAAAAAAAA=</HashCode>
+      <FileName>Layers\DrawingLayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WpfApplication2.Properties.Resources" Collapsed="true">
@@ -108,21 +108,21 @@
     <TypeIdentifier />
   </Class>
   <Class Name="System.Windows.Media.DrawingVisual" Collapsed="true">
-    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Enum Name="WpfApplication2.Layers.Tools" Collapsed="true">
     <Position X="11.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACACAAgAABAAAAAAAACAAgCAAAAAAgAAABAAA=</HashCode>
-      <FileName>Layers\ServiceLayer.cs</FileName>
+      <FileName>Layers\DrawingLayer.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="WpfApplication2.Layers.Size" Collapsed="true">
     <Position X="9.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>Layers\ServiceLayer.cs</FileName>
+      <FileName>Layers\DrawingLayer.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

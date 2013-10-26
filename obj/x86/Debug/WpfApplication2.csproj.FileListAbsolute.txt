@@ -242,3 +242,7 @@ C:\Work\termproj\VectorEditor\obj\x86\Debug\MainWindow.baml
 C:\Work\termproj\VectorEditor\obj\x86\Debug\WpfApplication2.g.resources
 C:\Work\termproj\VectorEditor\obj\x86\Debug\WpfApplication2.Properties.Resources.resources
 C:\Work\termproj\VectorEditor\obj\x86\Debug\WpfApplication2.csproj.GenerateResource.Cache
+C:\Work\termproj\VectorEditor\bin\Debug\WpfApplication2.exe.manifest
+C:\Work\termproj\VectorEditor\bin\Debug\WpfApplication2.application
+C:\Work\termproj\VectorEditor\obj\x86\Debug\WpfApplication2.exe.manifest
+C:\Work\termproj\VectorEditor\obj\x86\Debug\WpfApplication2.application

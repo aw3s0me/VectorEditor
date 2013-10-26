@@ -1,8 +1,12 @@
-﻿namespace WpfApplication2.Elements
+﻿using System.Xml.Serialization;
+
+namespace WpfApplication2.Elements
 {
     public class OxLine:OxPoint
     {
+        [XmlElement("X2")]
         protected int _x2;
+        [XmlElement("Y2")]
         protected int _y2;
 
         public int x2
