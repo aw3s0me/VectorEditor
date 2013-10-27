@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Collections.Generic;
 using WpfApplication2.Interfaces;
 
 namespace WpfApplication2.Layers
 {
-    public class UndoRedoLayer<T>
+    public class UndoRedoLayer
     {
-        private Stack<ICommand<T>> _undo;
-        private Stack<ICommand<T>> _redo;
+
+        private static readonly UndoRedoLayer Instance = new UndoRedoLayer();
+
+        private Stack<ICommand> _undo;
+        private Stack<ICommand> _redo;
+
+        public static UndoRedoLayer GetInstance
+        {
+            get
+            {
+                return Instance;
+            }
+        }
 
         public int UndoCount
         {
@@ -29,6 +35,12 @@ namespace WpfApplication2.Layers
             }
         }
 
+        public void Add(ICommand cmd)
+        {
+            _undo.Push(cmd);
+            _redo.Clear();
+        }
+
         public UndoRedoLayer()
         {
             Reset();
@@ -36,46 +48,36 @@ namespace WpfApplication2.Layers
 
         public void Reset()
         {
-            _undo = new Stack<ICommand<T>>();
-            _redo = new Stack<ICommand<T>>();
+            _undo = new Stack<ICommand>();
+            _redo = new Stack<ICommand>();
         }
 
-        public T Do(ICommand<T> command, T input)
+     /*   public void Do(ICommand command)
         {
             T output = command.Redo(input);
             _undo.Push(command);
             _redo.Clear(); //при новой команде очищается redo стек
             return output;
-        }
+        } */
 
-        public T Undo(T input)
+        public void Undo()
         {
-            if (_undo.Count > 0)
-            {
-                ICommand<T> cmd = _undo.Pop();
-                T output = cmd.Undo(input);
-                _redo.Push(cmd);
-                return output;
-            }
-            else
-            {
-                return input;
-            }
+            if (_undo.Count <= 0) return;
+            var cmd = _undo.Pop();
+            cmd.Undo();
+            //T output = cmd.Undo(input);
+            _redo.Push(cmd);
+            //return output;
         }
-        public T Redo(T input)
+        public void Redo()
         {
-            if (_redo.Count > 0)
-            {
-                ICommand<T> cmd = _redo.Pop();
-                T output = cmd.Redo(input);
-                _undo.Push(cmd);
-                return output;
-            }
-            else
-            {
-                return input;
-            }
+            if (_redo.Count <= 0) return;
+            var cmd = _redo.Pop();
+            cmd.Redo();
+            //T output = cmd.Redo(input);
+            _undo.Push(cmd);
+            //return output;
+            //return input;
         }
-
     }
 }

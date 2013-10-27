@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using WpfApplication2.Elements;
+using WpfApplication2.Helpers;
 using WpfApplication2.Layers;
 using Microsoft.Win32;
 using Size = WpfApplication2.Layers.Size;
@@ -40,7 +41,7 @@ namespace WpfApplication2
 
                 #endregion
 
-                #region sqare
+                #region square
 
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Square) //
                 {
@@ -93,11 +94,14 @@ namespace WpfApplication2
                 {
                     DrawingLayer.GetInstance.DrawFigure(ref visual, pointClicked, false);
                     drawingSurface.AddVisual(visual);
+                    UndoRedoLayer.GetInstance.Add(new AddElementCommand(visual, this.drawingSurface));
                 }
                 else if (SelectionLayer.GetInstance.CurrentTool != Tools.Line)
                 {
                     DrawingLayer.GetInstance.DrawFigure(ref visual, pointClicked, false);
                     drawingSurface.AddVisual(visual);
+                    //здесь добавление
+                    UndoRedoLayer.GetInstance.Add(new AddElementCommand(visual, this.drawingSurface));
                 }
             }
             else
@@ -368,14 +372,16 @@ namespace WpfApplication2
         }
         private void undo_click(object sender, RoutedEventArgs e)
         {
-            if (drawingSurface.ChildrenCount() > 0)
+            UndoRedoLayer.GetInstance.Undo();
+            /*if (drawingSurface.ChildrenCount() > 0)
             {
                 drawingSurface.DelLast();
-            }
+            } */
         }
         private void redo_click(object sender, RoutedEventArgs e)
         {
-            drawingSurface.CopyLast();
+            UndoRedoLayer.GetInstance.Redo();
+            //drawingSurface.CopyLast();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

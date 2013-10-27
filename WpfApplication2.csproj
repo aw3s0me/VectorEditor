@@ -94,6 +94,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Elements\OxFigure.cs" />
+    <Compile Include="Helpers\AddElementCommand.cs" />
+    <Compile Include="Helpers\FillCommand.cs" />
+    <Compile Include="Helpers\MoveCommand.cs" />
+    <Compile Include="Helpers\RemoveElementCommand.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Layers\CanvasLayer.cs" />
     <Compile Include="Elements\OxRectangle.cs" />
     <Compile Include="Elements\OxTriangle.cs" />
@@ -124,6 +129,7 @@
     <Compile Include="Layers\DrawingLayer.cs" />
     <Compile Include="Layers\SelectionLayer.cs" />
     <Compile Include="Layers\SerializationLayer.cs" />
+    <Compile Include="Layers\UndoRedoLayer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
