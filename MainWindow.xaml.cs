@@ -393,7 +393,18 @@ namespace WpfApplication2
 
         private void New_click(object sender, RoutedEventArgs e)
         {
-
+            if (DrawingLayer.GetInstance.IsChanged)
+            {
+                var dialogRes = System.Windows.MessageBox.Show("Хотите сохранить изменения?", "Save?", MessageBoxButton.YesNo);
+                if (dialogRes == MessageBoxResult.Yes)
+                    save_click(sender, e);
+            }
+            DrawingLayer.GetInstance.IsSave = false;
+            drawingSurface.DelAll();
+            SelectionLayer.GetInstance.CurrentTool = Tools.Hand;
+            SelectionLayer.GetInstance.CurrentColor = Colors.Black;
+            colorPick.SelectedColor = Colors.Black;
+            hand_btn.IsChecked = true;
         }
 
         private void triangle_click(object sender, RoutedEventArgs e)
