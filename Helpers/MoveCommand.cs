@@ -14,10 +14,10 @@ namespace WpfApplication2.Helpers
     {
         private readonly Point _newCoord;
         private readonly Point _oldCoord;
-        private Visual _value;
+        private OxFigure _value;
         public CanvasLayer CurCanv;
 
-        public Visual Value
+        public OxFigure Value
         {
             get
             {
@@ -29,7 +29,7 @@ namespace WpfApplication2.Helpers
             }
         }
 
-        public MoveCommand(Visual value, CanvasLayer curCanv, Point newCoord, Point oldCoord)
+        public MoveCommand(OxFigure value, CanvasLayer curCanv, Point newCoord, Point oldCoord)
         {
             _value = value;
             CurCanv = curCanv;
@@ -43,10 +43,7 @@ namespace WpfApplication2.Helpers
             {
                 //Point topLeftCorner = new Point();
                 //_value = CurCanv.GetVisual(_newCoord);
-                var fig = _value as OxFigure;
-                if (fig != null)
-                {
-                    DrawingLayer.GetInstance.DrawFigure(ref fig, _newCoord, false);
+                DrawingLayer.GetInstance.DrawFigure(ref _value, _newCoord, false);
                     /*if (fig.Name == OxFigure.Shape.Line)
                   {
                       //DrawingLayer.GetInstance.IsClicked = true;
@@ -66,7 +63,7 @@ namespace WpfApplication2.Helpers
                       topLeftCorner.Y = fig.ContentBounds.TopLeft.Y + DrawingLayer.GetInstance.DrawingPen.Thickness / 2;
                       DrawingLayer.GetInstance.DrawFigure(ref fig, topLeftCorner, true);
                   } */
-                }
+                
             }
         }
 
@@ -74,11 +71,7 @@ namespace WpfApplication2.Helpers
         {
             if (CurCanv != null && _value != null)
             {
-                var fig = _value as OxFigure;
-                if (fig != null)
-                {
-                    DrawingLayer.GetInstance.DrawFigure(ref fig, _oldCoord, false);
-                }
+                DrawingLayer.GetInstance.DrawFigure(ref _value, _oldCoord, false);
             }
         }
     }

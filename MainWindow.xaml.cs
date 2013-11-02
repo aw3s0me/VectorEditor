@@ -134,6 +134,7 @@ namespace WpfApplication2
                         {
                             DrawingLayer.GetInstance.IsClicked = true;
                             DrawingLayer.GetInstance.DrawFigure(ref visual, topLeftCorner, true);
+
                             DrawingLayer.GetInstance.ClickOffset = topLeftCorner - pointClicked;
                             DrawingLayer.GetInstance.IsDragging = true;
                             if (DrawingLayer.GetInstance.SelectedVisual != null && DrawingLayer.GetInstance.SelectedVisual != visual)
@@ -156,12 +157,14 @@ namespace WpfApplication2
                             DrawingLayer.GetInstance.IsSel = true;
                             DrawingLayer.GetInstance.LastPoint = topLeftCorner;
                         }
+                        UndoRedoLayer.GetInstance.Add(new MoveCommand(DrawingLayer.GetInstance.SelectedVisual, this.drawingSurface, DrawingLayer.GetInstance.LastPoint, pointClicked));
                     }
                     else if (DrawingLayer.GetInstance.IsSel)
                     {
                         OxFigure selectedVisual = DrawingLayer.GetInstance.SelectedVisual;
                         DrawingLayer.GetInstance.DrawFigure(ref selectedVisual, DrawingLayer.GetInstance.LastPoint, false);
                         DrawingLayer.GetInstance.IsSel = false;
+                        //UndoRedoLayer.GetInstance.Add(new MoveCommand(selectedVisual, this.drawingSurface, DrawingLayer.GetInstance.LastPoint, topLeftCorner));
                     }
                 }
 
@@ -224,7 +227,8 @@ namespace WpfApplication2
                 {
                     pointDragged = position + DrawingLayer.GetInstance.ClickOffset;
                 }
-                OxFigure selectedVisual = DrawingLayer.GetInstance.SelectedVisual;
+                var selectedVisual = DrawingLayer.GetInstance.SelectedVisual;
+                //UndoRedoLayer.GetInstance.Add(new MoveCommand(selectedVisual, this.drawingSurface, pointDragged, position));
                 DrawingLayer.GetInstance.DrawFigure(ref selectedVisual, pointDragged, true);
                 DrawingLayer.GetInstance.LastPoint = pointDragged;
             }
