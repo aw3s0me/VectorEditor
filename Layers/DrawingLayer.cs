@@ -98,7 +98,7 @@ namespace WpfApplication2.Layers
         public void DrawFigure(ref OxFigure visual, Point topLeftCorner, bool isSelected)
         {
             var curSize = new System.Windows.Size(1, 1);
-            Debug.WriteLine(topLeftCorner.ToString());
+            //Debug.WriteLine(topLeftCorner.ToString());
             if (ColorChange && IsClicked)
                 ColorChange = false;
 

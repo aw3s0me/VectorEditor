@@ -122,6 +122,7 @@ namespace WpfApplication2
                 {
                     Point topLeftCorner = new Point();
                     visual = drawingSurface.GetVisual(pointClicked);
+
                     if (visual != null)
                     {
                         if (visual.Name == OxFigure.Shape.Line)
@@ -171,6 +172,7 @@ namespace WpfApplication2
                         DrawingLayer.GetInstance.IsFill = true;
                         Point topLeftCorner = new Point(visual.ContentBounds.TopLeft.X + DrawingLayer.GetInstance.DrawingPen.Thickness / 2,
                             visual.ContentBounds.TopLeft.Y + DrawingLayer.GetInstance.DrawingPen.Thickness / 2);
+                        UndoRedoLayer.GetInstance.Add(new FillCommand(visual, topLeftCorner, SelectionLayer.GetInstance.CurrentColor, visual.Color));
                         visual.Color = SelectionLayer.GetInstance.CurrentColor;
                         DrawingLayer.GetInstance.IsClicked = true;
                         DrawingLayer.GetInstance.DrawFigure(ref visual, topLeftCorner, false);
@@ -182,6 +184,7 @@ namespace WpfApplication2
                             (Brush)DrawingLayer.GetInstance.BrushConverter.ConvertFromString(SelectionLayer.GetInstance.CurrentColor.ToString());
                         drawingSurface.Background = DrawingLayer.GetInstance.DrawingBrush;
                     }
+                    
                 }
 
                 #endregion
@@ -330,19 +333,8 @@ namespace WpfApplication2
             {
                 save_as_click(sender,e);
             }
-            /*RenderTargetBitmap renderBitmap = new RenderTargetBitmap((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight,
-                96d, 96d, PixelFormats.Pbgra32);
-            // needed otherwise the image output is black
-            drawingSurface.Measure(new System.Windows.Size((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight));
-            drawingSurface.Arrange(new Rect(new System.Windows.Size((int)drawingSurface.ActualWidth, (int)drawingSurface.ActualHeight)));
-            renderBitmap.Render(drawingSurface);
-            //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            PngBitmapEncoder encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create(renderBitmap)); */
             if (DrawingLayer.GetInstance.FileName != null)
                 SerializationLayer.SerializeToXML(drawingSurface, DrawingLayer.GetInstance.FileName);
-                    //encoder.Save(file);
-
             DrawingLayer.GetInstance.IsChanged = false;
         }
         private void save_as_click(object sender, RoutedEventArgs e)
@@ -373,15 +365,10 @@ namespace WpfApplication2
         private void undo_click(object sender, RoutedEventArgs e)
         {
             UndoRedoLayer.GetInstance.Undo();
-            /*if (drawingSurface.ChildrenCount() > 0)
-            {
-                drawingSurface.DelLast();
-            } */
         }
         private void redo_click(object sender, RoutedEventArgs e)
         {
             UndoRedoLayer.GetInstance.Redo();
-            //drawingSurface.CopyLast();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
