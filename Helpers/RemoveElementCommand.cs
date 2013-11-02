@@ -31,19 +31,15 @@ namespace WpfApplication2.Helpers
           CurCanv = curCanv;
       }
 
-      public void Redo(/*Visual value , ref CanvasLayer canvas */)
+      public void Redo()
       {
           if (CurCanv!=null && _Value!=null)
               CurCanv.DeleteVisual(_Value);
-          //canvas.AddVisual(value);
-          //return _Value;
       }
-      public void Undo(/*Visual value , ref CanvasLayer canvas */)
+      public void Undo()
       {
           if (CurCanv != null && _Value != null)
               CurCanv.AddVisual(_Value);
-          //canvas.DeleteVisual(value);
-          //return _Value;
       }
 
     }

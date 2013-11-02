@@ -111,7 +111,12 @@ namespace WpfApplication2
                 if (SelectionLayer.GetInstance.CurrentTool == Tools.Erase)
                 {
                     visual = drawingSurface.GetVisual(pointClicked);
-                    if (visual != null) drawingSurface.DeleteVisual(visual);
+                    if (visual != null)
+                    {
+                        UndoRedoLayer.GetInstance.Add(new RemoveElementCommand(visual, this.drawingSurface));
+                        drawingSurface.DeleteVisual(visual);
+                    }
+                    
                 }
 
                 #endregion
